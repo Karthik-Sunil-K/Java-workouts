@@ -18,8 +18,9 @@ public class Main{
     rcolor.add("blue");
     rcolor.add("indigo");
     rcolor.add("violet");
-    System.out.println("printing the last color :"+rcolor.get(rcolor.size()-1));
+    System.out.println("Prrinting the last color :"+rcolor.get(rcolor.size()-1));
     rcolor.set(3, "purple");
+    System.out.println("Print the List");
     System.out.println(rcolor);
     }
 }
