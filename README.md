@@ -43,3 +43,8 @@ package Smartphone;
         float screen;
         String OS;
     }
+
+Note:
+- To covert a list to hashmap just create a hashmap object and pass the list the new hashmap list will eliminate all the repeating values inside the list and give a new list
+
+- if we

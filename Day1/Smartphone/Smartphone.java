@@ -12,5 +12,4 @@ public class Smartphone {
     String brand;
     String model;
     String ram;
-    
 }
