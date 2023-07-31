@@ -56,6 +56,8 @@ Note:
 
 - names.contain("string") to check whether an element is contain or not
 
+- maintain insersion order
+
 - to itrate in the list use a for loop 
 
     for(String name : names){
@@ -67,6 +69,8 @@ Note:
 
 - Similar to ArrayList only change in the internal operation
 
+- maintain insertion order 
+
 ### Hashset
 Note:
 - The major difference btwn ArrayList and HashSet is in Hashset the duplicates will terminate 
@@ -75,9 +79,12 @@ Note:
 
 - can use where the unique value is required 
 
+- does not maintain insertion order
+
 -  IMP: if it comes to two object then it will take both and will not remove the duplicate one so if we want to remove the duplicate one we need to use 
     #### Equals
     - if you want to equate objects you need to use equals and specify the params to be check for equating 
+
 
 
 
