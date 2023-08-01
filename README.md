@@ -86,6 +86,26 @@ Note:
     - if you want to equate objects you need to use equals and specify the params to be check for equating 
 
 
+### Map
+
+- will store as key value pair
+
+- in both arrayList and hashset .add method is used but in hashmap 
+.put method is using for adding
+
+- for itrating we need to pass the key datatype most probably string and we need to get the keys as a list so for that we need to use names.keySet() (here names is the hashmap)
+
+Itration example:
+
+    for(String key : names.keySet()){
+        System.out.println(names.get(key))
+    }
+
+
+
+
+
+
 
 
 

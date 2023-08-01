@@ -15,7 +15,8 @@ public class Example {
             System.out.println(name);
         }
         System.out.println("next line");
-        System.out.println(names);
+        System.out.println(names); //will print as a list
+        
     }
     
 }

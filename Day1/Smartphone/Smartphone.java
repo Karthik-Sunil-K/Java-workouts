@@ -9,7 +9,8 @@
 package Day1.Smartphone;
 
 public class Smartphone {
-    String brand;
     String model;
-    String ram;
+    int ram;
+    double screen;
+    String OS;
 }
