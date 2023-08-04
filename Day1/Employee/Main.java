@@ -2,22 +2,36 @@ package Day1.Employee;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
             List<Employee> employees = new ArrayList<>();
     
-    Employee employee1 = new Employee();
-    Employee employee2 = new Employee();
-    Employee employee3 = new Employee();
-    Employee employee4 = new Employee();
-    Employee employee5 = new Employee();
+    Employee employee1 = new Employee("karthik",21,2500,5,"HR",4,false);
+    Employee employee2 = new Employee("aravind",22,2100,1,"technical",3,false);
+    Employee employee3 = new Employee("adarsh",22,2500,3,"operation",3,false);
+    Employee employee4 = new Employee("muiz",22,2200,2,"HR",4,false);
+    Employee employee5 = new Employee("muhasin",22,3000,4,"HR",2,false);
 
-    employee1.add("Karthik",25,2500,5,"HR",4);
-    employee2.add("Muhasin",22,2899,5,"Operation",4);
-    employee3.add("Milan",21,2000,5,"Project",3);
-    employee4.add("Aravind",29,2990,5,"Leading",2);
-    employee5.add("Muiz",26,2100,5,"Technical",1);
+
+    employees.add(employee1);
+    employees.add(employee2);
+    employees.add(employee3);
+    employees.add(employee4);
+    employees.add(employee5);
+
+        System.out.println("list ----- "+employees);
+
+
+        System.out.println("heiuiiu");
+    List<Employee> filter_based_exp = employees.stream().filter((e)->e.yearsOfExp>2).map(e-> {
+        e.pro = true;
+        return e;
+    }).collect(Collectors.toList());
+    filter_based_exp.forEach(System.out::println);
+
+
 
     }
 
