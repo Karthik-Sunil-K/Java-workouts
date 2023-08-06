@@ -19,9 +19,20 @@ public class Account {
         this.balanceAmount+=creditAmount;
     }
 
-    public void setDebit(int debitAmount){
-        this.balanceAmount-=debitAmount;
+    public int setDebit(int debitAmount,int keySecret){
+        if (secretKey == keySecret){
+            this.balanceAmount-=debitAmount;
+            return 200;
+        }else {
+            return 404;
+        }
+
     }
+
+    public int getBalanceAmount() {
+        return balanceAmount;
+    }
+
 
 
     @Override
