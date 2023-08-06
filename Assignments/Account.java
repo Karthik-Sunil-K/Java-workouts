@@ -15,7 +15,13 @@ public class Account {
         this.secretKey = secretKey;
     }
 
+    public void setCredit(int creditAmount){
+        this.balanceAmount+=creditAmount;
+    }
 
+    public void setDebit(int debitAmount){
+        this.balanceAmount-=debitAmount;
+    }
 
 
     @Override
