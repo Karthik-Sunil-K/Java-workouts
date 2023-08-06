@@ -1,23 +1,36 @@
 package Assignments;
 
+import Day1.Employee.Employee;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
 
-        Bank bank = new Bank();
+        List<Account> accountList = new ArrayList<>();
 
-        Account account1 = new Account(9001,"karthik",1000,123);
-        Account account2 = new Account(9002,"aravind",2000,456);
-        Account account3 = new Account(9003,"ajith",1500,213);
-        Account account4 = new Account(9004,"muiz",3000,998);
-        Account account5 = new Account(9005,"babu",5000,343);
+        Account account1 = new Account(9001,"Savings",1000,123);
+        Account account2 = new Account(9002,"Current",2000,456);
+        Account account3 = new Account(9003,"Fixed",1500,213);
+        Account account4 = new Account(9004,"Savings",3000,998);
+        Account account5 = new Account(9005,"Savings",5000,343);
 
-        bank.add(account1);
-        bank.add(account2);
-        bank.add(account3);
-        bank.add(account4);
-        bank.add(account5);
+        accountList.add(account1);
+        accountList.add(account2);
+        accountList.add(account3);
+        accountList.add(account4);
+        accountList.add(account5);
+
+
     }
+
+    public static void filteredWIthAmount(List<Account> accountList){
+        List<Account>filteredListWithAmount = accountList.stream().filter((e)->e.balanceAmount>1500).collect(Collectors.toList());
+        System.out.println("The List of all accounts with grater than 1500 balance");
+        filteredListWithAmount.forEach(System.out::println);
+    }
+
+
 }
