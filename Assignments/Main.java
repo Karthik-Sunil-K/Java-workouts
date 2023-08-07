@@ -75,8 +75,19 @@ public class Main {
                 break;
 
             case 2:
-                System.out.println("Nothing");
+                System.out.print("You have Selected Credit\nEnter the Account Number: ");
+                int accNum;
+                accNum = scanner.nextInt();
+                System.out.println("Enter the Credit amount");
+                int creditAmount =scanner.nextInt();
+                bank.getCustomerByCustomerID(11).getAccountByAccNo(accNum).setCredit(creditAmount);
+                System.out.println("The transaction is Successful!!\n");
+                System.out.println("Balance : "+bank.getCustomerByCustomerID(11).getAccountByAccNo(accNum).getBalanceAmount());
+
                 break;
+            case 3:
+
+
 
             default:
                 System.out.println("Invalid Operation");
@@ -89,11 +100,11 @@ public class Main {
 
     }
 
+
     public static void filteredWIthAmount(List<Account> accountList){
         List<Account>filteredListWithAmount = accountList.stream().filter((e)->e.balanceAmount>1500).collect(Collectors.toList());
         System.out.println("The List of all accounts with grater than 1500 balance");
         filteredListWithAmount.forEach(System.out::println);
     }
-
 
 }
