@@ -33,6 +33,7 @@ public class Main {
         Bank bank = new Bank(Arrays.asList(c1,c2));
 
         int operation;
+        int typeofCustomer=1;
         Scanner scanner = new Scanner(System.in);
 
 
@@ -44,59 +45,76 @@ public class Main {
 //
 //        System.out.println("balance : "+bank.getCustomerByCustomerID(10).getAccountByAccNo(9002).getBalanceAmount());
 
-        System.out.println("Choose the operation");
-        System.out.println("1 : Debit\n2 : Credit\n");
-        operation= scanner.nextInt();
 
-        switch (operation){
+
+        switch (typeofCustomer){
 
             case 1:
-                System.out.print("You have Selected Debit\nEnter the Account Number: ");
-                int accNo;
 
-                accNo = scanner.nextInt();
+                System.out.println("Choose the Customer Type");
+                System.out.println("1 : Customer\n2 : Bank\n");
+                int options = scanner.nextInt();
 
-                System.out.println("Enter the Secret Key : ");
-                int enteredKey;
-                enteredKey = scanner.nextInt();
+                switch (options){
+                    case 1:
+                        System.out.println("Choose the operation");
+                        System.out.println("1 : Debit\n2 : Credit\n3 : Check Balance\n4 : Main Menu");
+                        operation= scanner.nextInt();
+                        switch (operation){
+                            case 1:
+                                System.out.print("You have Selected Debit\nEnter the Account Number: ");
+                                int accNo;
+                                accNo = scanner.nextInt();
+                                System.out.println("Enter the Secret Key : ");
+                                int enteredKey;
+                                enteredKey = scanner.nextInt();
+                                System.out.println("Enter the Debit Amount");
+                                int debitAmount =scanner.nextInt();
+                                int debitMessage = bank.getCustomerByCustomerID(11).getAccountByAccNo(accNo).setDebit(debitAmount,enteredKey);
+                                if(debitMessage == 200){
+                                    System.out.println("The transaction is Successful!\n");
+                                    System.out.println("Balance : "+bank.getCustomerByCustomerID(11).getAccountByAccNo(accNo).getBalanceAmount());
 
-                System.out.println("Enter the Debit Amount");
-                int debitAmount =scanner.nextInt();
+                                }else {
+                                    System.out.println("Failed !! invalid Account Number or Secret Key");
+                                }
+                                break;
 
-                int debitMessage = bank.getCustomerByCustomerID(11).getAccountByAccNo(accNo).setDebit(debitAmount,enteredKey);
-                if(debitMessage == 200){
-                    System.out.println("The transaction is Successful!\n");
-                    System.out.println("Balance : "+bank.getCustomerByCustomerID(11).getAccountByAccNo(accNo).getBalanceAmount());
+                            case 2:
+                                System.out.print("You have Selected Credit\nEnter the Account Number: ");
+                                int accNum;
+                                accNum = scanner.nextInt();
+                                System.out.println("Enter the Credit amount");
+                                int creditAmount =scanner.nextInt();
+                                bank.getCustomerByCustomerID(11).getAccountByAccNo(accNum).setCredit(creditAmount);
+                                System.out.println("The transaction is Successful!!\n");
+                                System.out.println("Balance : "+bank.getCustomerByCustomerID(11).getAccountByAccNo(accNum).getBalanceAmount());
+                                break;
+                            case 3:
+                                System.out.println("Enter the Account Number");
+                                int accNumberForBalanceCheck;
+                                accNumberForBalanceCheck = scanner.nextInt();
+                                System.out.println("Balance : "+bank.getCustomerByCustomerID(11).getAccountByAccNo(accNumberForBalanceCheck).getBalanceAmount());
+                            case 4:
+                                break;
+                            default:
+                                System.out.println("Invalid Operation");
+                                break;
+                        }
+                    break;
+                    case 2:
+                        System.out.println("the bank is under maintains");
+                        break;
 
-                }else {
-                    System.out.println("Failed !! invalid Account Number or Secret Key");
+                    default:
+                        System.out.println("Invalid Choice");
+                        break;
+
                 }
-
                 break;
-
-            case 2:
-                System.out.print("You have Selected Credit\nEnter the Account Number: ");
-                int accNum;
-                accNum = scanner.nextInt();
-                System.out.println("Enter the Credit amount");
-                int creditAmount =scanner.nextInt();
-                bank.getCustomerByCustomerID(11).getAccountByAccNo(accNum).setCredit(creditAmount);
-                System.out.println("The transaction is Successful!!\n");
-                System.out.println("Balance : "+bank.getCustomerByCustomerID(11).getAccountByAccNo(accNum).getBalanceAmount());
-
-                break;
-            case 3:
-
-
-
             default:
-                System.out.println("Invalid Operation");
-
-
-
+                System.out.println("invalid choice");
         }
-
-
 
     }
 

@@ -19,4 +19,7 @@ public class Customer {
     public Account getAccountByAccNo(int accNo){
         return this.accountList.stream().filter((a)->a.accountNo ==accNo).collect(Collectors.toList()).get(0);
     }
+    public Account getAccountDetailsWithSetAmount(int filterAmount){
+        return this.accountList.stream().filter((a)->a.balanceAmount>filterAmount).collect(Collectors.toList()).get(0);
+    }
 }

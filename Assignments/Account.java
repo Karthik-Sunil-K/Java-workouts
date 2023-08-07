@@ -36,7 +36,6 @@ public class Account {
     }
 
 
-
     @Override
     public String toString() {
         if (includeSectetKey()) {
